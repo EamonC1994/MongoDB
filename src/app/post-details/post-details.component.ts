@@ -20,6 +20,11 @@ export class PostDetailsComponent implements OnInit {
         this.posts = data;
     });
 
-
+    
    }
+   onDelete(id:string){
+    //console.log(id);
+    this.ps.deletePost(id).subscribe()
+    this.ngOnInit();
+  }
 }
