@@ -68,6 +68,15 @@ app.delete('/api/posts/:id', function(req, res){
     function(err){});
 })
 
+app.put('/api/posts/:id', function(req,res){
+    PostModel.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+    });
+    })
+
+
+
 
 var server = app.listen(8081, function () {
    var host = server.address().address

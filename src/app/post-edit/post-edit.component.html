@@ -15,8 +15,8 @@
       <textarea
         matInput
         rows="4"
-        name={{post[0].content}}
-        ngModel
+        name="content"
+        ngModel={{post[0].content}}
         required
         #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error>
